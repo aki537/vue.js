@@ -9,13 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
     <div id="app">
-      <p>{{ message }}</p>
-      <!-- javascriptの構文をそのまま書けるので足し算もできる -->
-      <p>{{ number + 3 }}</p>
-      <!-- 参考演算子もかける -->
-      <p>{{ ok ? 'YES' : 'NO' }}</p>
-      <!-- メソッドもかける -->
       <p>{{ sayHi() }}</p>
+      
     </div>
     <!-- この3行はテンプレートと呼ばれてる。
     HTMLを書いているのではなく、HTMLベースのテンプレートを書いている。
@@ -26,12 +21,11 @@
         el: '#app',
         data: {
           message: 'HelloWorld!',
-          number: 3,
-          ok : true
         },
         methods: {
           sayHi: function(){
-            return 'Hi';
+            return this.message;
+            // メソッドのインスタンス内でmessageの内容を返したい時は'this'をつける
           }
         }
       })
