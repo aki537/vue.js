@@ -1,0 +1,21 @@
+<!-- 公式のドキュメントよりコピペする -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+</script>
+
+<div id="app">
+  <!-- {{}}の中の文字の中身が表示される。変数のようなもの? -->
+  <p>{{message}}</p>
+</div>
+
+<script>
+  // Vueインスタンスを作成
+  new Vue ({
+    // idを指定
+    el: '#app',
+    // 変数を設定
+    data: {
+      message: 'HelloWorld!'
+    }
+  })
+</script>
+
