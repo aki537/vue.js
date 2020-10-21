@@ -1,28 +1,36 @@
-<!-- 公式のドキュメントよりコピペする -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 公式のドキュメントよりコピペする -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <!-- {{}}の中の文字の中身が表示される。変数のようなもの? -->
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage">メッセージを反転</button>
+    </div>
 
-<div id="app">
-  <!-- {{}}の中の文字の中身が表示される。変数のようなもの? -->
-  <p>{{message}}</p>
-  <button v-on:click="reverseMessage">メッセージを反転</button>
-</div>
-
-<script>
-  // Vueインスタンスを作成
-  new Vue ({
-    // idを指定
-    el: '#app',
-    // 変数を設定
-    data: {
-      message: 'HelloWorld!'
-    },
-    methods: {
-      reverseMessage: function() {
-        this.message = 
-        this.message.split('').reverse().join('')
-      }
-    }
-  })
-</script>
-
+    <script>
+      // Vueインスタンスを作成
+      new Vue ({
+        // idを指定
+        el: '#app',
+        // 変数を設定
+        data: {
+          message: 'HelloWorld!'
+        },
+        methods: {
+          reverseMessage: function() {
+            this.message = 
+            this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
