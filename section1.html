@@ -5,6 +5,7 @@
 <div id="app">
   <!-- {{}}の中の文字の中身が表示される。変数のようなもの? -->
   <p>{{message}}</p>
+  <button v-on:click="reverseMessage">メッセージを反転</button>
 </div>
 
 <script>
@@ -15,6 +16,12 @@
     // 変数を設定
     data: {
       message: 'HelloWorld!'
+    },
+    methods: {
+      reverseMessage: function() {
+        this.message = 
+        this.message.split('').reverse().join('')
+      }
     }
   })
 </script>
