@@ -9,12 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
     <div id="app">
+     <!-- v-onceをつけなければHelloVuejsと表示される。 -->
+      <p v-once>{{ message }}</p>
       <p>{{ sayHi() }}</p>
-      
     </div>
-    <!-- この3行はテンプレートと呼ばれてる。
-    HTMLを書いているのではなく、HTMLベースのテンプレートを書いている。
-    よって、まるで HTML の延長上のような感覚で、本来であれば複雑な処理を簡単に実行することができる。 -->
 
     <script>
       new Vue ({
@@ -23,9 +21,9 @@
           message: 'HelloWorld!',
         },
         methods: {
-          sayHi: function(){
-            return this.message;
-            // メソッドのインスタンス内でmessageの内容を返したい時は'this'をつける
+          sayHi (){
+            this.message = 'Hello VueJS'
+            return 'Hi';
           }
         }
       })
