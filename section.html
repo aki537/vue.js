@@ -9,22 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
     <div id="app">
-     <!-- v-onceをつけなければHelloVuejsと表示される。 -->
-      <p v-once>{{ message }}</p>
-      <p>{{ sayHi() }}</p>
+      <div>{{ html }}</div>
+      <!-- v-htmlタグでデータをhtmlに変換できる -->
+      <!-- そのまま使用できるのでscriptタグが使える為脆弱性がある -->
+      <div v-html="html"></div>
     </div>
 
     <script>
       new Vue ({
         el: '#app',
         data: {
-          message: 'HelloWorld!',
-        },
-        methods: {
-          sayHi (){
-            this.message = 'Hello VueJS'
-            return 'Hi';
-          }
+          html: '<h1>h1です</h1>'
         }
       })
     </script>
