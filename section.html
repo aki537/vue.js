@@ -9,17 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
     <div id="app">
-      <div>{{ html }}</div>
-      <!-- v-htmlタグでデータをhtmlに変換できる -->
-      <!-- そのまま使用できるのでscriptタグが使える為脆弱性がある -->
-      <div v-html="html"></div>
+      <a :[attribute]="url">Google</a>
+      <a v-bind="twitterObject">Twitter</a>
     </div>
 
     <script>
       new Vue ({
         el: '#app',
         data: {
-          html: '<h1>h1です</h1>'
+          url: 'https://google.com',
+          attribute: 'href',
+          twitterObject: {
+            href: 'https://twitter.com',
+            id: 31
+          }
         }
       })
     </script>
