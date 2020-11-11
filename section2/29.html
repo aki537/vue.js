@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <!-- :はv-bindの省略形 -->
+      <!-- <h1 :class="{ red: isActive, 'bg-blue': !isActive}">Hello</h1> -->
+      <h1 :class="classObject">Hello</h1>
+      <button @click="isActive = !isActive">切り替え</button>
+    </div>
+
+    <script>
+      new Vue ({
+        el: '#app',
+        data: {
+          isActive: true
+        },
+        computed: {
+          classObject: function() {
+            return {
+              red: this.isActive, 
+              'bg-blue': !this.isActive
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+
+  <style>
+    .red {
+      color: red;
+    }
+
+    .bg-blue {
+      background-color: blue;
+    }
+  </style>
+</html>
