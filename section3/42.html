@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <ul>
+        <!-- 第2引数に変数（任意)を指定すると配列番号が取得できる -->
+        <!-- <li v-for="(fruit, index) in fruits">{{ index }}{{ fruit }}</li> -->
+        <li v-for="(fruit, i) in fruits">{{ i }}{{ fruit }}</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue ({
+        el: '#app',
+        data: {
+          fruits: ['りんご', 'バナナ', 'ぶどう']
+        }
+      })
+    </script>
+  </body>
+
+  <style>
+  </style>
+</html>
