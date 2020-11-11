@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <ul>
+        <!-- inじゃなくてofでもかける -->
+        <li v-for="(fruit, i) of fruits">{{ i }}{{ fruit }}</li>
+        <hr>
+      </ul>
+      <ul>
+        <!-- inじゃなくてofでもかける -->
+        <template v-for="fruit of fruits">
+          <li>{{ fruit }}</li>
+          <hr>
+        </template>
+      </ul>
+      <ul>
+        <!-- inじゃなくてofでもかける -->
+        <li v-for="n of 10">{{n}}</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue ({
+        el: '#app',
+        data: {
+          fruits: ['りんご', 'バナナ', 'ぶどう']
+        }
+      })
+    </script>
+  </body>
+
+  <style>
+  </style>
+</html>
