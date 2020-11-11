@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <button @click="ok = !ok">ぼたん</button>
+      <p v-if="ok">if</p>
+      <p v-show="ok">show</p>
+
+      <!-- v-showではテンプレートが使えず消えない -->
+      <template v-show="ok">
+        <p>test</p>
+      </template>
+    </div>
+
+    <script>
+      new Vue ({
+        el: '#app',
+        data: {
+          ok: true,
+        }
+      })
+    </script>
+  </body>
+
+  <style>
+  </style>
+</html>
