@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+    </div>
+    <!-- <hr> -->
+    <!-- <div class="app"> -->
+    <!-- </div> -->
+
+    <script>
+    Vue.component('my-component', {
+      // コンポーネント中のdataプロパティは関数にしてreturn でオブジェクトを返さないといけない
+      data: function(){
+        return {
+          number: 12,
+        }
+      },
+      template: '<p>いいね({{number}})</p>'
+    })
+
+      new Vue ({
+        el: '#app',
+        // el: '?app',
+        // data: {
+        //   number: 12
+        // },
+        // template: '<p>いいね({{number}})</p>'
+      })
+    </script>
+  </body>
+
+  <style>
+  </style>
+</html>
