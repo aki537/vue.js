@@ -11,6 +11,8 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
+    // ES6はこの書き方
+    // ES5の HelloWorld: HelloWorldと同じ意味
     HelloWorld
   }
 }
