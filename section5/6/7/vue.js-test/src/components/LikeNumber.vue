@@ -1,17 +1,13 @@
 <template>
   <div>
-    <p>いいね({{number}})</p>
+    <!-- 親コンポーネント(App.vue)のnumberをここに反映させたい -->
+    <p>いいね({{number / 2}})</p>
     <button @click="increment">+1</button>
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-    return {
-      number: 5
-    };
-  },
   methods: {
     increment() {
       this.number += 1;
