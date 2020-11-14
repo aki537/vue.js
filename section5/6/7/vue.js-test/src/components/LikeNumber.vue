@@ -2,7 +2,6 @@
   <div>
     <p>いいね({{ halfNumber }})</p>
     <button @click="increment">+1</button>
-    <p>{{ testProps }}</p>
   </div>
 </template>
 
@@ -13,13 +12,7 @@ export default {
       type: Number,
       default: 10
     },
-    // 新しいプロパティをつければ複数のpropsを作成できる
-    testProps: {
-      type: String
-    }
   },
-  // 配列でも同じ感じでできる
-  // props: ["totalNumber", "testProps"],
   computed: {
     halfNumber() {
       // thisでpropsもdataのようにアクセスできる
@@ -28,7 +21,10 @@ export default {
   },
   methods: {
     increment() {
-      this.number += 1;
+      // $emitはカスタムイベントを作れる
+      // 子から親への受け渡しは＄emitを使用（送り口）
+      // 第一引数は好きな名前、第2引数は渡したい値を指定（今回はtotalNumberに+1した値を親に渡したい)
+      this.$emit("my-click", this.totalNumber + 1);
     }
   }
 };
