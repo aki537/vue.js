@@ -1,15 +1,19 @@
 <template>
   <div>
-    <!-- キャメルケースでかく -->
-    <p>いいね({{totalNumber / 2}})</p>
+    <p>いいね({{ halfNumber }})</p>
     <button @click="increment">+1</button>
   </div>
 </template>
 
 <script>
 export default {
-  // キャメルケースで書く
   props: ["totalNumber"],
+  computed: {
+    halfNumber() {
+      // thisでpropsもdataのようにアクセスできる
+      return this.totalNumber / 2;
+    }
+  },
   methods: {
     increment() {
       this.number += 1;
