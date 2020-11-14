@@ -2,8 +2,9 @@
   <div>
     <LikeHeader></LikeHeader>
     <h2>{{ number }}</h2>
-    <LikeNumber></LikeNumber>
-    <LikeNumber></LikeNumber>
+    <!-- 親から子に受け渡すために属性を定義する -->
+    <LikeNumber v-bind:konumber="oyanumber"></LikeNumber>
+    <LikeNumber :konumber="oyanumber"></LikeNumber>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ import LikeHeader from "./components/LikeHeader.vue"
 export default {
   data() {
     return{
-      number: 10
+      oyanumber: 14
     };
   },
   components: {
