@@ -2,9 +2,9 @@
   <div>
     <LikeHeader></LikeHeader>
     <h2>{{ oyanumber }}</h2>
-    <!-- 指定してないとdefaultの10が渡される -->
-    <LikeNumber></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
+    <!-- 今回はpropsで指定したtest-propsに文字列testを渡す -->
+    <LikeNumber :total-number="oyanumber" test-props="test"></LikeNumber>
   </div>
 </template>
 
