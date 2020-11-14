@@ -21,10 +21,9 @@ export default {
   },
   methods: {
     increment() {
-      // $emitはカスタムイベントを作れる
-      // 子から親への受け渡しは＄emitを使用（送り口）
-      // 第一引数は好きな名前、第2引数は渡したい値を指定（今回はtotalNumberに+1した値を親に渡したい)
       this.$emit("my-click", this.totalNumber + 1);
+      // わかりやすいデータフローにするため子から親にはデータをわたせない
+      // this.totalNumber += 1  自分のtotalNumberが変わるだけで親の値は変わらない
     }
   }
 };
