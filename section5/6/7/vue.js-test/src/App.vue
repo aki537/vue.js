@@ -1,10 +1,11 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <h2>{{ number }}</h2>
-    <!-- 親から子に受け渡すために属性を定義する -->
-    <LikeNumber v-bind:konumber="oyanumber"></LikeNumber>
-    <LikeNumber :konumber="oyanumber"></LikeNumber>
+    <h2>{{ oyanumber }}</h2>
+    <!-- パスカルケースでもキャメルケースでもどっちでもかける -->
+    <!-- なるべくケバブケースで書いたほうが良い（属性はケバブケースで書くためそれに習ったほうが良い） -->
+    <LikeNumber v-bind:totalNumber="oyanumber"></LikeNumber>
+    <LikeNumber :total-number="oyanumber"></LikeNumber>
   </div>
 </template>
 
