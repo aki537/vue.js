@@ -1,6 +1,9 @@
 <template>
   <div>
+    <!-- パスカルケース -->
     <LikeHeader></LikeHeader>
+    <!-- 下みたいにもかける（ケバブケース） -->
+    <!-- <like-header></like-header> -->
     <LikeNumber></LikeNumber>
   </div>
 </template>
