@@ -7,7 +7,7 @@
 
 <script>
 // ローカル登録するためLikeHeader.vueをインポート
-import LikeHeader from "./LikeHeader.vue"
+import LikeHeader from "./components/LikeHeader.vue"
 
 export default {
   // componentsに追加してローカル登録

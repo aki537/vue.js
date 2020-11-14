@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 // 新規作成したLikenumber.vueファイルをインポート
-import LikeNumber from "./LikeNumber"
+import LikeNumber from "./components/LikeNumber"
 
 Vue.config.productionTip = false
 
