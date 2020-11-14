@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
+// 新規作成したLikenumber.vueファイルをインポート
+import LikeNumber from "./LikeNumber"
 
 Vue.config.productionTip = false
 
-// インポートされたApp.vueファイルはconsole.logで
-// 見るとコンポーネントのオブジェクトの形なってる
-console.log(App);
+// Likenumber.vueファイルをグローバル登録
+Vue.component('LikeNumber', LikeNumber)
 
-// render関数を使えばAppはコンポーネントになってるので表示できる
 new Vue({
   render: h => h(App),
 }).$mount('#app')

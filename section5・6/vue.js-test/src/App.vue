@@ -1,18 +1,4 @@
 <template>
-  <p>いいね({{number}})</p>
+  <LikeNumber></LikeNumber>
 </template>
 
-<script>
-export default {
-  // data: function() {
-    data() {
-    return {
-      number: 5
-    };
-  }
-}
-</script>
-
-<style>
-
-</style>
