@@ -21,9 +21,8 @@ export default {
   },
   methods: {
     increment() {
+      // カスタムイベント名はケバブケースでかく
       this.$emit("my-click", this.totalNumber + 1);
-      // わかりやすいデータフローにするため子から親にはデータをわたせない
-      // this.totalNumber += 1  自分のtotalNumberが変わるだけで親の値は変わらない
     }
   }
 };
