@@ -7,7 +7,26 @@
 
 <script>
 export default {
-  props: ["totalNumber"],
+  // props: ["totalNumber"],
+  // 配列ではなくオブジェクトでも指定できる
+  props: {
+    // keyには同じくtotalNumber, valueには型を指定する（今回は数字なのでNumber（バリデーションを指定する））
+    // totalNumber: Number
+    // オブジェクトにもできて他にもバリデーションをつけれる（こっちの方が見やすい）
+    totalNumber: {
+      type: Number,
+      // 絶対に指定する必要があるかどうか（v-bindでしてないと警告が出る）
+      // required: true,
+      // 指定していない場合のデフォルト値を設定（requiredと一緒にはかけない）
+      default: 10
+      //オブジェクトで指定する場合defaultは関数になる
+      // default: function() {
+      //   return {
+      //     number: 5
+      //   };
+      // }
+    }
+  },
   computed: {
     halfNumber() {
       // thisでpropsもdataのようにアクセスできる
@@ -27,4 +46,3 @@ div {
   border: 1px solid red;
 }
 </style>
-

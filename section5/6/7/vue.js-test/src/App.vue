@@ -2,7 +2,8 @@
   <div>
     <LikeHeader></LikeHeader>
     <h2>{{ oyanumber }}</h2>
-    <LikeNumber v-bind:totalNumber="oyanumber"></LikeNumber>
+    <!-- 指定してないとdefaultの10が渡される -->
+    <LikeNumber></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
   </div>
 </template>
