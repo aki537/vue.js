@@ -1,8 +1,10 @@
 <template>
   <div>
     <LikeHeader header-text="hello">
-      <h1>トータルのいいね数</h1>
-      <h2>{{ oyanumber }}</h2>
+      <!-- LinkHeaderの中身がないのでフォールバックコンテンツが表示される -->
+      <!-- <h1>トータルのいいね数</h1>
+      <h2>{{ oyanumber }}</h2> -->
+
       <!-- ここでは使えない -->
       <!-- <p>{{ headerText }}</p> -->
     </LikeHeader>
