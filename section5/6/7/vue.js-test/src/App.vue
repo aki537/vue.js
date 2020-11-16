@@ -1,20 +1,10 @@
 <template>
   <div>
     <LikeHeader>
-      <!-- これもデフォルトとなるのでこんにちはの下に来る -->
-      <h2>みなさん</h2>
-      <template v-slot:title>
+      <!-- templateをdivに変えるとエラーが出る -->
+      <div v-slot:title>
         <h2>こんにちは</h2>
-      </template>
-      <!-- templateでv-slotをしてしない場合はデフォルトスロットとなる -->
-      <h3>はじめまして</h3>
-      <p>よろしくおねがいします</p>
-      <!-- 下のように勝手に変換して処理してる -->
-      <!-- <template v-slot:default>
-        <h2>みなさん</h2>
-        <h3>はじめまして</h3>
-        <p>よろしくおねがいします</p>
-      </template> -->
+      </div>
       <template v-slot:number>
         <p>{{oyanumber}}</p>
       </template>
