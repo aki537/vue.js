@@ -1,10 +1,11 @@
 <template>
   <div>
-    <!-- app.vueのLinkHeaderタグ内に書いた文字がスロットと置き換わる -->
-    <slot>
-       <!-- slotの中に書いたコードはLinkheaderタグの中に何も書かれていない場合適用される -->
+    <slot name="title">
       <h2>デフォルトのタイトル</h2>
     </slot>
+    <hr>
+    <p>良いねの数</p>
+    <slot name="number"></slot>
     <p>{{ headerText }}</p>
   </div>
 </template>

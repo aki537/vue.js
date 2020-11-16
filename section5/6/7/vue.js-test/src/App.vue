@@ -1,12 +1,12 @@
 <template>
   <div>
-    <LikeHeader header-text="hello">
-      <!-- LinkHeaderの中身がないのでフォールバックコンテンツが表示される -->
-      <!-- <h1>トータルのいいね数</h1>
-      <h2>{{ oyanumber }}</h2> -->
-
-      <!-- ここでは使えない -->
-      <!-- <p>{{ headerText }}</p> -->
+    <LikeHeader>
+      <template v-slot:title>
+        <h2>こんにちは</h2>
+      </template>
+      <template v-slot:number>
+        <p>{{oyanumber}}</p>
+      </template>
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
