@@ -1,17 +1,24 @@
 <template>
   <div>
-    <slot name="title"></slot>
+    <slot name="title" :user="user" text="text">
+    </slot>
     <slot></slot>
     <hr>
     <p>良いねの数</p>
     <slot name="number"></slot>
-    <p>{{ headerText }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["headerText"],
+  deta() {
+    return{
+      user: {
+        firstName: "Jack",
+        lastName: "Donald"
+      }
+    };
+  }
 }
 </script>
 

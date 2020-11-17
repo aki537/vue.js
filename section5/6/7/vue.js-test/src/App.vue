@@ -1,13 +1,16 @@
 <template>
   <div>
     <LikeHeader>
-      <!-- templateをdivに変えるとエラーが出る -->
-      <div v-slot:title>
+      <h2>みなさん</h2>
+      <template v-slot:title = "slotProps">
         <h2>こんにちは</h2>
-      </div>
+        <h2>{{ slotProps.user.firstName }}</h2>
+      </template>
+      <h3>はじめまして</h3>
       <template v-slot:number>
         <p>{{oyanumber}}</p>
       </template>
+      <p>よろしくお願いします</p>
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
