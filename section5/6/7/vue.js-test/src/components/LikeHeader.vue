@@ -10,16 +10,16 @@
 </template>
 
 <script>
-export default {
-  deta() {
-    return{
-      user: {
-        firstName: "Jack",
-        lastName: "Donald"
-      }
-    };
+  export default {
+    data() {
+      return {
+        user: {
+          firstName: "Jack",
+          lastName: "Donald"
+        }
+      };
+    }
   }
-}
 </script>
 
 <style scoped>
