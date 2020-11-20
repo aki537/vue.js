@@ -1,8 +1,7 @@
 <template>
   <div>
-    <slot name="title" :user="user" text="text">
+    <slot name="title">
     </slot>
-    <slot></slot>
     <hr>
     <p>良いねの数</p>
     <slot name="number"></slot>
