@@ -2,6 +2,7 @@
   <div>
     <slot name="title">
     </slot>
+    <slot name="default"></slot>
     <hr>
     <p>良いねの数</p>
     <slot name="number"></slot>
