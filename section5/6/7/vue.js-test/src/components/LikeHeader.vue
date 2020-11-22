@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="title">
+    <slot name="title" v-bind:user="user" text="text">
     </slot>
     <slot name="default"></slot>
     <hr>
