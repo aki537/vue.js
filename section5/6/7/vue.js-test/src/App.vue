@@ -1,20 +1,25 @@
 <template>
   <div>
-    <LikeHeader>
-      <h2>みなさん</h2>
-      <template  v-slot:title="slotProps">
+    <LikeHeader v-slot:="slotProps">
+      <!-- なにもないときはコンポーネントにもv-slotがかけて指定できる -->
+
+      <!-- <template  v-slot:title="slotProps">
         <h2>こんにちは</h2>
-         <!-- このslotPropsにさっきのユーザーのデータが入ってる -->
+         このslotPropsにさっきのユーザーのデータが入ってる
         <h2>{{ slotProps }}</h2>
         <h2>{{ slotProps.user.firstName }}</h2>
       </template>
       <template v-slot:default>
-        <h3>はじめまして</h3>
-        <p>よろしくおねがいします</p>
       </template>
       <template v-slot:number>
         <p>{{ oyanumber }}</p>
-      </template>
+      </template> -->
+      <!-- <template v-slot:default="slotProps"> -->
+      <p>{{ slotProps }}</p>
+      <h2>みなさん</h2>
+      <h3>はじめまして</h3>
+      <p>よろしくおねがいします</p>
+      <!-- </template> -->
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
