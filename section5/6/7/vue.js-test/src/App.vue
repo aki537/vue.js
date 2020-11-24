@@ -1,24 +1,14 @@
 <template>
   <div>
+    <!-- コンポーネントの横にv-slotとかけるのはデフォルトスロットしか無いときのみ -->
     <LikeHeader v-slot:="slotProps">
-      <!-- なにもないときはコンポーネントにもv-slotがかけて指定できる -->
-
-      <!-- <template  v-slot:title="slotProps">
-        <h2>こんにちは</h2>
-         このslotPropsにさっきのユーザーのデータが入ってる
-        <h2>{{ slotProps }}</h2>
-        <h2>{{ slotProps.user.firstName }}</h2>
-      </template>
-      <template v-slot:default>
-      </template>
-      <template v-slot:number>
-        <p>{{ oyanumber }}</p>
-      </template> -->
-      <!-- <template v-slot:default="slotProps"> -->
       <p>{{ slotProps }}</p>
       <h2>みなさん</h2>
       <h3>はじめまして</h3>
       <p>よろしくおねがいします</p>
+      <!-- 下のみたいなのを書くとデフォルト以外のスロットもできるのでエラーが起きる -->
+      <!-- <template v-slot:title="slotProps">
+      <template v-slot:number="slotProps"> -->
       <!-- </template> -->
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
