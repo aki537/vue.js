@@ -1,15 +1,12 @@
 <template>
   <div>
-    <!-- コンポーネントの横にv-slotとかけるのはデフォルトスロットしか無いときのみ -->
-    <LikeHeader v-slot:="slotProps">
+    <LikeHeader>
       <p>{{ slotProps }}</p>
       <h2>みなさん</h2>
       <h3>はじめまして</h3>
       <p>よろしくおねがいします</p>
-      <!-- 下のみたいなのを書くとデフォルト以外のスロットもできるのでエラーが起きる -->
-      <!-- <template v-slot:title="slotProps">
-      <template v-slot:number="slotProps"> -->
-      <!-- </template> -->
+      <!-- []を書けばdataの中のtitleの値を持ってこれる -->
+      <template v-slot:[title]></template>
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
@@ -22,7 +19,8 @@ import LikeHeader from "./components/LikeHeader.vue";
 export default {
   data() {
     return{
-      oyanumber: 14
+      oyanumber: 14,
+      title: "title"
     };
   },
   components: {
