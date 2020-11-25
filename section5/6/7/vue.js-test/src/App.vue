@@ -1,12 +1,13 @@
 <template>
   <div>
+    <!-- コンポーネントに付ける場合は#dafault="hogehoge"というふうにする -->
     <LikeHeader>
       <p>{{ slotProps }}</p>
       <h2>みなさん</h2>
       <h3>はじめまして</h3>
       <p>よろしくおねがいします</p>
-      <!-- []を書けばdataの中のtitleの値を持ってこれる -->
-      <template v-slot:[title]></template>
+      <!-- v-slot:を#に省略できる -->
+      <template #[title]></template>
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="oyanumber"></LikeNumber>
