@@ -1,31 +1,34 @@
 <template>
   <div>
-    <!-- コンポーネントに付ける場合は#dafault="hogehoge"というふうにする -->
     <LikeHeader>
-      <p>{{ slotProps }}</p>
-      <h2>みなさん</h2>
       <h3>はじめまして</h3>
-      <p>よろしくおねがいします</p>
-      <!-- v-slot:を#に省略できる -->
-      <template #[title]></template>
     </LikeHeader>
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
-    <LikeNumber :total-number="oyanumber"></LikeNumber>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <component v-bind:is="currentComponent"></component>
+    <!-- <About v-if="currentComponent === 'About'"></About>
+    <Home v-if="currentComponent === 'Home'"></Home> -->
   </div>
 </template>
 
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
+import About from "./components/About.vue"
+import Home from "./components/Home.vue"
 
 export default {
   data() {
     return{
       oyanumber: 14,
-      title: "title"
+      title: "title",
+      currentComponent: "Home"
     };
   },
   components: {
-    LikeHeader
+    LikeHeader,
+    About,
+    Home
   },
   methods: {
     incrementNumber(value) {

@@ -1,10 +1,5 @@
 <template>
   <div>
-    <slot v-bind:user="user" text="text">
-    </slot>
-    <slot></slot>
-    <hr>
-    <p>良いねの数</p>
     <slot></slot>
   </div>
 </template>
