@@ -6,9 +6,9 @@
     <LikeNumber :total-number="oyanumber" @my-click="incrementNumber"></LikeNumber>
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
-    <keep-alieve>
+    <keep-alive>
       <component v-bind:is="currentComponent"></component>
-    </keep-alieve>
+    </keep-alive>
     <!-- <About v-if="currentComponent === 'About'"></About>
     <Home v-if="currentComponent === 'Home'"></Home> -->
   </div>
