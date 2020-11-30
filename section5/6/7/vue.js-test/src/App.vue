@@ -9,6 +9,15 @@
     <keep-alive>
       <component v-bind:is="currentComponent"></component>
     </keep-alive>
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <input
+        id="title" 
+        type="text"
+        v-model="eventDate.title">
+        <p>{{eventDate.title}}</p>
+    </div>
     <!-- <About v-if="currentComponent === 'About'"></About>
     <Home v-if="currentComponent === 'Home'"></Home> -->
   </div>
@@ -24,7 +33,10 @@ export default {
     return{
       oyanumber: 14,
       title: "title",
-      currentComponent: "Home"
+      currentComponent: "Home",
+      eventDate: {
+        title: "タイトル"
+      }
     };
   },
   components: {
@@ -40,13 +52,3 @@ export default {
 }
 </script>
 
-<style scoped>
-div {
-  border: 1px solid blue;
-}
-
-/* CSSはどっちに書いても適用される */
-/* h1 {
-  color: red
-} */
-</style>
