@@ -17,6 +17,12 @@
         type="text"
         v-model.lazy="eventDate.title">
         <p>{{eventDate.title}}</p>
+      <label for="maxNumber">タイトル</label>
+      <input
+        id="maxNumber" 
+        type="number"
+        v-model.number="eventDate.maxNumber">
+        <p>{{ typeof eventDate.maxNumber }}</p>
     </div>
     <!-- <About v-if="currentComponent === 'About'"></About>
     <Home v-if="currentComponent === 'Home'"></Home> -->
@@ -35,7 +41,8 @@ export default {
       title: "title",
       currentComponent: "Home",
       eventDate: {
-        title: "タイトル"
+        title: "タイトル",
+        maxNumber: 0
       }
     };
   },
