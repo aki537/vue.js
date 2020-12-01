@@ -15,7 +15,7 @@
       <input
         id="title" 
         type="text"
-        v-model="eventDate.title">
+        v-model.lazy="eventDate.title">
         <p>{{eventDate.title}}</p>
     </div>
     <!-- <About v-if="currentComponent === 'About'"></About>
