@@ -16,13 +16,19 @@
         id="title" 
         type="text"
         v-model.lazy="eventDate.title">
-        <p>{{eventDate.title}}</p>
+        <pre>{{eventDate.title}}</pre>
       <label for="maxNumber">タイトル</label>
       <input
         id="maxNumber" 
         type="number"
         v-model.number="eventDate.maxNumber">
         <p>{{ typeof eventDate.maxNumber }}</p>
+      <label for="host">主催者</label>
+      <input
+        id="host" 
+        type="text"
+        v-model.trim="eventDate.host">
+        <pre>{{eventDate.host}}</pre>
     </div>
     <!-- <About v-if="currentComponent === 'About'"></About>
     <Home v-if="currentComponent === 'Home'"></Home> -->
@@ -42,7 +48,8 @@ export default {
       currentComponent: "Home",
       eventDate: {
         title: "タイトル",
-        maxNumber: 0
+        maxNumber: 0,
+        host: ""
       }
     };
   },
