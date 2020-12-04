@@ -38,6 +38,26 @@
         v-model="eventDate.isPrivate">
       <label for="isPrivate">非公開</label>
       <p>{{ eventDate.isPrivate }}</p>
+      <p>参加条件</p>
+      <input 
+        type="checkbox" 
+        id="10" 
+        value="10代" 
+        v-model="eventDate.target">
+      <label for="10">10代</label>
+      <input 
+        type="checkbox" 
+        id="20" 
+        value="20代" 
+        v-model="eventDate.target">
+      <label for="20">20代</label>
+      <input 
+        type="checkbox" 
+        id="30" 
+        value="30代" 
+        v-model="eventDate.target">
+      <label for="30">30代</label>
+      <p>{{ eventDate.target }}</p>
     </div>
     <!-- <About v-if="currentComponent === 'About'"></About>
     <Home v-if="currentComponent === 'Home'"></Home> -->
@@ -60,7 +80,8 @@ export default {
         maxNumber: 0,
         host: "",
         detail: "",
-        isPrivate: false
+        isPrivate: false,
+        target: []
       }
     };
   },
