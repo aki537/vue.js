@@ -15,7 +15,9 @@
       <input
         id="title" 
         type="text"
-        v-model.lazy="eventDate.title">
+        :value="eventDate.title"
+        @input="eventDate.tilte = $event.target.value"
+        > 
         <pre>{{eventDate.title}}</pre>
       <label for="maxNumber">タイトル</label>
       <input
