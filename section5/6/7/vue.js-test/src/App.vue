@@ -11,14 +11,19 @@
     </keep-alive>
     <div styele="padding: 10rem;">
       <h2>イベントのフォーム</h2>
-      <label for="title">タイトル</label>
+      <EventTitle v-model="eventDate.title"></EventTitle>
+      <!-- <EventTitle 
+        :value="ebentDate.title"
+        @input="eventDate.title = $event"
+      ></EventTitle> -->
+      <!-- <label for="title">タイトル</label>
       <input
         id="title" 
         type="text"
         :value="eventDate.title"
         @input="eventDate.tilte = $event.target.value"
         > 
-        <pre>{{eventDate.title}}</pre>
+        <pre>{{eventDate.title}}</pre> -->
       <label for="maxNumber">タイトル</label>
       <input
         id="maxNumber" 
@@ -90,6 +95,7 @@
 import LikeHeader from "./components/LikeHeader.vue";
 import About from "./components/About.vue"
 import Home from "./components/Home.vue"
+import EventTitle from "./components/EventTitle.vue";
 
 export default {
   data() {
@@ -113,7 +119,8 @@ export default {
   components: {
     LikeHeader,
     About,
-    Home
+    Home,
+    EventTitle
   },
   methods: {
     incrementNumber(value) {
