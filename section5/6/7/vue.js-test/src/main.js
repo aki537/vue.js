@@ -8,6 +8,14 @@ Vue.config.productionTip = false
 // Likenumber.vueファイルをグローバル登録
 Vue.component('LikeNumber', LikeNumber)
 
+Vue.directive("border", {
+  bind() {},
+  insert() {},
+  update() {},
+  componentUpdate() {},
+  unbind() {},
+});
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
