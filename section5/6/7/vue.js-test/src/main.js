@@ -9,11 +9,21 @@ Vue.config.productionTip = false
 Vue.component('LikeNumber', LikeNumber)
 
 Vue.directive("border", {
-  bind() {},
-  insert() {},
-  update() {},
-  componentUpdate() {},
-  unbind() {},
+  bind() {
+    // ディレクティブで初めて対象の要素に紐付いたとき
+  },
+  insert() {
+    // 親Nodeに挿入されたとき
+  },
+  update() {
+    // コンポーネントが更新される度、子コンポーネントが更新される前
+  },
+  componentUpdate() {
+    // コンポーネントが更新される度。子コンポーネントが更新された後
+  },
+  unbind() {
+    // ディレクティブが紐付いている要素から取り除かれたとき
+  },
 });
 
 new Vue({
