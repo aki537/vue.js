@@ -1,16 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 // 新規作成したLikenumber.vueファイルをインポート
-import LikeNumber from "./components/LikeNumber"
+import LikeNumber from "./components/LikeNumber";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 // Likenumber.vueファイルをグローバル登録
-Vue.component('LikeNumber', LikeNumber)
+Vue.component('LikeNumber', LikeNumber);
 
 Vue.directive("border", function(el, binding){
   el.style.border = "solid black 2px";
+  el.style.borderWidth = binding.value;
 });
+
 // {
 //   bind() {
 //     // ディレクティブで初めて対象の要素に紐付いたとき
@@ -32,4 +34,4 @@ Vue.directive("border", function(el, binding){
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');
