@@ -10,7 +10,8 @@ Vue.component('LikeNumber', LikeNumber);
 
 Vue.directive("border", function(el, binding){
   el.style.border = "solid black 2px";
-  el.style.borderWidth = binding.value;
+  el.style.borderWidth = binding.value.width;
+  el.style.borderColor = binding.value.color;
 });
 
 // {
@@ -35,3 +36,5 @@ Vue.directive("border", function(el, binding){
 new Vue({
   render: h => h(App),
 }).$mount('#app');
+
+
