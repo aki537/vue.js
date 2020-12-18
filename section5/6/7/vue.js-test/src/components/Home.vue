@@ -4,8 +4,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      tmpData: "hello"
+    };
+  },
   directives: {
     border(el,binding) {
+      // カスタムディレクティブ内でthisは使えない
+      // this.tmpData = "こんにちは";
       el.style.borderWidth = binding.value.width;
       el.style.borderColor = binding.value.color;
       el.style.borderStyle = binding.arg;
