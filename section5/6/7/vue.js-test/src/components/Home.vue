@@ -1,18 +1,27 @@
 <template>
-  <p v-border:solid.round.shadow="{width: '5px', color: 'red'}">Home</p>
+  <div>
+    <p v-border:solid.round.shadow="{width: '5px', color: 'red'}">Home</p>
+    <h2>{{ title | upperCase }}</h2>
+    <p>{{ subTitle | upperCase }}</p>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      tmpData: "hello"
+      tmpData: "hello",
+      title: "Welcome to Tokyo",
+      subTitle: "Tokyo is a great city"
     };
   },
+  // computed: {
+  //   upperCaseTitle() {
+  //     return this.title.toUpperCase();
+  //   }
+  // },
   directives: {
     border(el,binding) {
-      // カスタムディレクティブ内でthisは使えない
-      // this.tmpData = "こんにちは";
       el.style.borderWidth = binding.value.width;
       el.style.borderColor = binding.value.color;
       el.style.borderStyle = binding.arg;
