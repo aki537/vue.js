@@ -8,6 +8,7 @@ Vue.config.productionTip = false;
 // Likenumber.vueファイルをグローバル登録
 Vue.component('LikeNumber', LikeNumber);
 Vue.filter("upperCase", function(value) {
+  console.log("フィルタ");
   return value.toUpperCase();
 });
 
