@@ -1,0 +1,48 @@
+<template>
+  <div class="main">
+    <button @click="show = !show">切り替え</button>
+    <!-- transitionを作るときはnameをつける -->
+    <transition name="fade">
+      <p v-if="show">hello</p>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      show: true,
+    };
+  },
+}
+</script>
+
+<style scoped>
+/* transitionでつけたnameで以下の6つのクラスを作る */
+.fade-enter {
+
+}
+.fade-enter-active {
+
+}
+.fade-enter-to {
+
+}
+.fade-leave {
+
+}
+.fade-leave-active {
+
+}
+.fade-leave-to {
+
+}
+
+.main {
+  width: 70%;
+  margin: auto;
+  padding-top: 5rem;
+  text-align: center;
+}
+</style>
