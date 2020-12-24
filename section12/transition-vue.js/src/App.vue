@@ -5,15 +5,9 @@
     <transition name="fade">
       <p v-if="show">hello</p>
     </transition>
-    <transition name="slide">
-      <!-- 複数やりたいときはdivでくくる（単一の要素しかできない) -->
-      <div v-if="show">
-        <p>bye</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-      </div>
+    <!-- typeを追加することでどちらを優先するか指定できる -->
+    <transition name="slide" type="animation">
+      <p v-if="show">bye</p>
     </transition>
   </div>
 </template>
@@ -55,24 +49,19 @@ export default {
   opacity: 0;
 }
 
-/* .slide-enter {
-
-} */
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+}
 .slide-enter-active {
   animation: slide-in 0.5s;
+  transition: opacity 1s;
 }
-/* .slide-enter-to {
 
-}
-.slide-leave {
-
-} */
 .slide-leave-active {
   animation: slide-in 0.5s reverse;
+  transition: opacity 1s;
 }
-/* .slide-leave-to {
-
-} */
 
 @keyframes slide-in {
   from {
