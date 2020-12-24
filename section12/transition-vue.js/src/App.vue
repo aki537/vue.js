@@ -22,21 +22,27 @@ export default {
 /* transitionでつけたnameで以下の6つのクラスを作る */
 .fade-enter {
   /* 現れるときの最初の状態 */
+  opacity: 0;
 }
 .fade-enter-active {
   /* 現れるときのトランジションの状態 */
+  transition: opacity 0.5s;
 }
 .fade-enter-to {
   /* 現れるときの最後の状態 */
+  opacity: 1;
 }
 .fade-leave {
   /* 消えるときの最初の状態 */
+  opacity: 1;
 }
 .fade-leave-active {
   /* 消えるときのトランジョンの状態 */
+  transition: opacity 0.5s;
 }
 .fade-leave-to {
   /* 消えるときの最後の状態 */
+  opacity: 0;
 }
 
 .main {
