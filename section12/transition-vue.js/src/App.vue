@@ -1,12 +1,15 @@
 <template>
   <div class="main">
     <button @click="show = !show">切り替え</button>
-    <!-- transitionを作るときはnameをつける -->
-    <transition name="fade">
+    <transition name="fade" appear>
       <p v-if="show">hello</p>
     </transition>
-    <!-- typeを追加することでどちらを優先するか指定できる -->
-    <transition name="slide" type="animation">
+    <!-- appearをつけると初期描画するときもトランジションが実行去れる -->
+    <transition 
+      name="slide"
+      type="animation"
+      appear
+    >
       <p v-if="show">bye</p>
     </transition>
   </div>
