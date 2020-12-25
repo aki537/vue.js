@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+    <button @click="myAnimation= 'slide'">Slide</button>
+    <button @click="myAnimation= 'slide'">Fade</button>
+    <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     <transition
       enter-active-class="animated bounce"
@@ -10,8 +13,7 @@
     </transition>
     <!-- appearをつけると初期描画するときもトランジションが実行去れる -->
     <transition 
-      name="slide"
-      type="animation"
+      :name="myAnimation"
       appear
     >
       <p v-if="show">bye</p>
@@ -24,6 +26,7 @@ export default {
   data() {
     return {
       show: true,
+      myAnimation: 'slide'
     };
   },
 }
