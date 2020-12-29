@@ -147,6 +147,11 @@ export default {
   border-radius: 100px;
   background-color: deeppink;
 }
+
+.fade-move {
+  transition: transform 1s;
+}
+
 /* transitionでつけたnameで以下の6つのクラスを作る */
 .fade-enter {
   /* 現れるときの最初の状態 */
@@ -167,6 +172,8 @@ export default {
 .fade-leave-active {
   /* 消えるときのトランジョンの状態 */
   transition: opacity 0.5s;
+  position: absolute;
+  width: 200px;
 }
 .fade-leave-to {
   /* 消えるときの最後の状態 */
