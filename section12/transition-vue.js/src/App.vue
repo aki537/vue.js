@@ -70,14 +70,32 @@ export default {
     };
   },
   methods: {
-    beforeEnter() {},
-    enter() {},
-    afterEnter() {},
-    enterCancelled() {},
-    beforeLeave() {},
-    leave() {},
-    afterLeave() {},
-    leaveCancelled() {},
+    beforeEnter(el) {
+      // 現れる前
+    },
+    enter(el) {
+      // 現れるとき
+      // el.style.width = '100px'
+      
+    },
+    afterEnter(el, done) {
+      // 現れた後
+    },
+    enterCancelled(el) {
+      // 現れるアニメーションがキャンセルされたとき
+    },
+    beforeLeave(el) {
+      // 消える前
+    },
+    leave(el, done) {
+      // 消えたとき
+    },
+    afterLeave(el) {
+      // 消えた後
+    },
+    leaveCancelled(el) {
+      // 消えるアニメーションがキャンセルされたとき
+    },
   }
 }
 </script>
