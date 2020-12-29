@@ -9,13 +9,7 @@
       :css="false"
       @before-enter="beforeEnter"
       @enter="enter"
-      @after-enter="afterEnter"
-      @enter-cancelled="enterCancelled"
-      
-      @before-leave="beforeLeave"
       @leave="leave"
-      @after-leave="afterLeave"
-      @leave-cancelled="leaveCancelled"
     >
       <div class="circle" v-if="show"></div>
     </transition>
@@ -29,7 +23,8 @@
       <p
         v-if="show"
         key="bye"
-      >さよなら</p>
+      >
+      さよなら</p>
       <!-- <p v-if="!show">こんにちは</p> -->
       <!-- <div v-else>こんにちは</div> -->
       <p
@@ -73,30 +68,48 @@ export default {
   methods: {
     beforeEnter(el) {
       // 現れる前
+      el.style.transform = 'scale(0)'
     },
-    enter(el) {
+    enter(el, done) {
       // 現れるとき
       // el.style.width = '100px'
-
+      let scale = 0;
+      const interval = setInterval(() => {
+        el.style.transform = `scale(${scale})`;
+        scale += 0.1
+        if ( scale > 1) {
+          clearInterval(interval);
+          done();
+        }
+      }, 30);
     },
-    afterEnter(el, done) {
-      // 現れた後
-    },
-    enterCancelled(el) {
-      // 現れるアニメーションがキャンセルされたとき
-    },
-    beforeLeave(el) {
-      // 消える前
-    },
+    // afterEnter(el) {
+    //   // 現れた後
+    // },
+    // enterCancelled(el) {
+    //   // 現れるアニメーションがキャンセルされたとき
+    // },
+    // beforeLeave(el) {
+    //   // 消える前
+    // },
     leave(el, done) {
-      // 消えたとき
+      // 消えるとき
+      let scale = 1;
+      const interval = setInterval(() => {
+        el.style.transform = `scale(${scale})`;
+        scale -= 0.1
+        if ( scale < 0) {
+          clearInterval(interval);
+          done();
+        }
+      }, 30);
     },
-    afterLeave(el) {
-      // 消えた後
-    },
-    leaveCancelled(el) {
-      // 消えるアニメーションがキャンセルされたとき
-    },
+    // afterLeave(el) {
+    //   // 消えた後
+    // },
+    // leaveCancelled(el) {
+    //   // 消えるアニメーションがキャンセルされたとき
+    // },
   }
 }
 </script>
