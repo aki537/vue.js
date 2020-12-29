@@ -4,6 +4,20 @@
     <button @click="myAnimation= 'slide'">Fade</button>
     <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
+    <br><br>
+    <transition
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @enter-cancelled="enterCancelled"
+      
+      @before-leave="beforeLeave"
+      @leave="leave"
+      @after-leave="afterLeave"
+      @leave-cancelled="leaveCancelled"
+    >
+      <div class="circle" v-if="show"></div>
+    </transition>
     <br>
     <button @click="myComponent= 'ComponentA'">ComponentA</button>
     <button @click="myComponent= 'ComponentB'">ComponentB</button>
@@ -55,10 +69,27 @@ export default {
       myComponent: "ComponentA"
     };
   },
+  methods: {
+    beforeEnter() {},
+    enter() {},
+    afterEnter() {},
+    enterCancelled() {},
+    beforeLeave() {},
+    leave() {},
+    afterLeave() {},
+    leaveCancelled() {},
+  }
 }
 </script>
 
 <style scoped>
+.circle {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 100px;
+  background-color: deeppink;
+}
 /* transitionでつけたnameで以下の6つのクラスを作る */
 .fade-enter {
   /* 現れるときの最初の状態 */
