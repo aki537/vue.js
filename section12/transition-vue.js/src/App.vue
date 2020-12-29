@@ -6,7 +6,7 @@
     <br>
     <button @click="add">追加</button>
     <ul style="width: 200px; margin: auto;">
-      <transition-group>
+      <transition-group name="fade" tag="div">
         <li
           style="cursor: pointer;"
           v-for="(number) in numbers"
