@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- このroute-viewは適用されない -->
+    <router-view></router-view>
     <h3>Home</h3>
     <button @click="toUsers">Usersのページに行く</button>
   </div>
