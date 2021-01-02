@@ -38,5 +38,24 @@ export default new Router({
       path: '*',
       redirect: "/"
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    // savedPositonは前回のスクロールが保存されている
+    if (savedPosition) {
+      return savedPosition;
+    }
+    // toは$routeの中身が入ってる
+    if (to.hash) {
+      return {
+        selector: to.hash
+      };
+    }
+    // return {
+    //   selector: '#next-user',
+    //   offset: { x: 0, y: 100 }
+    // };
+
+    // return { x: 0,y: 0 };
+    // console.log('scrollBehavior');
+  }
 });
