@@ -3,15 +3,19 @@
     <router-view></router-view>
     <h3>Home</h3>
     <button @click="toUsers">Usersのページに行く</button>
-    <p>{{ count }}</p>
+    <p>{{ doubleCount }}</p>
+    <p>{{ tripleCount }}</p>
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    count() {
-      return this.$store.state.count;
+    doubleCount() {
+      return this.$store.getters.doubleCount;
+    },
+    tripleCount() {
+      return this.$store.getters.tripleCount;
     }
   },
   methods: {
