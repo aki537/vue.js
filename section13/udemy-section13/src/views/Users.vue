@@ -20,25 +20,25 @@
 export default {
   props: ["id"],
   // コンポーネントが実行されたときに表示する
-  beforeRouteEnter(to, from, next) {
-    console.log('beforeRouteEnter');
-    next(vm => {
-      console.log(vm.id);
-    });
-  },
-  beforeRouteUpdate(to, from, next) {
-    // URLが変わった時に新しいコンポーネントの変更がない時に実行する
-    console.log('beforeRouteUpdate');
-    next();
-  },
-  beforeRouteLeave(to, from, next) {
-    console.log('beforeRouteLeave');
-    const isLeave = window.confirm("本当にこのページを離れますか？");
-    if (isLeave){
-      next();
-    } else {
-      next(false);
-    }
-  },
+  // beforeRouteEnter(to, from, next) {
+  //   console.log('beforeRouteEnter');
+  //   next(vm => {
+  //     console.log(vm.id);
+  //   });
+  // },
+  // beforeRouteUpdate(to, from, next) {
+  //   // URLが変わった時に新しいコンポーネントの変更がない時に実行する
+  //   console.log('beforeRouteUpdate');
+  //   next();
+  // },
+  // beforeRouteLeave(to, from, next) {
+  //   console.log('beforeRouteLeave');
+  //   const isLeave = window.confirm("本当にこのページを離れますか？");
+  //   if (isLeave){
+  //     next();
+  //   } else {
+  //     next(false);
+  //   }
+  // },
 }
 </script>
