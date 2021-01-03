@@ -40,22 +40,29 @@ export default new Router({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    // savedPositonは前回のスクロールが保存されている
-    if (savedPosition) {
-      return savedPosition;
-    }
     // toは$routeの中身が入ってる
-    if (to.hash) {
-      return {
-        selector: to.hash
-      };
-    }
+    // この中のthisはnew Routerを示してる
+    // appはnewVueの方
+    return new Promise(resolve => {
+      this.app.$root.$once('triggerScroll', () => {
+        let position = { x: 0, y: 0 }
+        if (savedPosition) {
+          position = savedPosition;
+        }
+        if (to.hash) {
+          position =  {
+            selector: to.hash
+          };
+        }
+        resolve(position);
+      });
+    });
     // return {
     //   selector: '#next-user',
     //   offset: { x: 0, y: 100 }
     // };
 
-    // return { x: 0,y: 0 };
+    // return { x: 0,y: 100 };
     // console.log('scrollBehavior');
   }
 });
