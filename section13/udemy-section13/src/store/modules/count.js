@@ -22,6 +22,8 @@ const actions = {
   },
 };
 export default {
+  // namespaceをtrueにするとモジュール間で同一の名前の処理があっても〇〇/で分けられる
+  namespaced: true,
   state,
   getters,
   mutations,

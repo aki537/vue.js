@@ -24,7 +24,7 @@ import { mapActions } from "vuex";
 
 export default {
   methods: {
-    ...mapActions(["increment", "decrement"]),
+    ...mapActions("count", ["increment", "decrement"]),
     // increment() {
     //   this.$store.dispatch('increment', 2)
     // },
