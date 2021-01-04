@@ -19,5 +19,24 @@ export default new Vuex.Store({
     decrement(state, number) {
       state.count -= number;
     },
+  },
+  // 非同期処理をするときはactionsを使う
+  // （mutationsで非同期処理はかけない)
+  actions: {
+    // increment(context, number) {
+    //   context.commit('increment', number);
+    // },
+    // 下の書き方でcontextを省略もできる
+    increment({ commit }, number) {
+      commit('increment', number);
+    },
+    decrement({ commit }, number) {
+      commit('decrement', number);
+    },
+    // incrementAsync(context) {
+    //   setTimeout(() => {
+
+    //   },1000)
+    // }
   }
 });
