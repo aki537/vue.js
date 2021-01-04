@@ -9,15 +9,21 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   computed: {
-    doubleCount() {
-      return this.$store.getters.doubleCount;
-    },
-    tripleCount() {
-      return this.$store.getters.tripleCount;
-    }
+    ...mapGetters(["doubleCount", "tripleCount"])
   },
+  // computed: mapGetters({
+  //   myComponentDoubleCount: "doubleCount"
+  // }),
+  //   doubleCount() {
+  //     return this.$store.getters.doubleCount;
+  //   },
+  //   tripleCount() {
+  //     return this.$store.getters.tripleCount;
+  //   }
   methods: {
     toUsers() {
       this.$router.push({
