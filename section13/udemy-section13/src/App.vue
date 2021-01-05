@@ -33,3 +33,5 @@ export default {
   transition: opacity 1s;
 }
 </style>
+
+// netlifyに直接アップロードしてwebに公開する方法もある
